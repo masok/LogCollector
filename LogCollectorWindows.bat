@@ -87,7 +87,7 @@ if exist "%InstallHistory%\" (
 )
 GOTO MENU
 
-::Collects Statistics log and places it in LOGSsTATS folder
+::Collects Statistics log and places it in LOGSSTATS folder
 
 :EM
 if exist "%LOGSSTATS%\" (
@@ -103,17 +103,17 @@ GOTO MENU
 if exist "%LOGSWEB%\" (
   echo    --^>Web Logs Found  
   mkdir "%LOGROOT%\%COMPUTERNAME%_LOGSWEB"
-  xcopy "%LOGSWEB%\MSTRLog*" "%LOGROOT%\%COMPUTERNAME%_LOGSWEB" /i >nul
+  xcopy "%LOGSWEB%\templogs*" "%LOGROOT%\%COMPUTERNAME%_LOGSWEB" /i >nul
 )
 GOTO MENU
 
-::Collects MSTRLOG files from Mobile and places them in LOGSMOBILE folder
+::Collects files from Mobile and places them in LOGSMOBILE folder
 
 :Mobile
 if exist "%LOGSMOBILE%\" (
   echo    --^>Mobile Logs Found  
   mkdir "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE"
-  xcopy "%LOGSMOBILE%\MSTRLog*" "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE" /i >nul
+  xcopy "%LOGSMOBILE%\templogs*" "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE" /i >nul
 )
 GOTO MENU
 
@@ -176,7 +176,7 @@ if exist "%LOGSSTATS%\" (
 if exist "%LOGSWEB%\" (
   echo    --^>Web Logs Found  
   mkdir "%LOGROOT%\%COMPUTERNAME%_LOGSWEB"
-  xcopy "%LOGSWEB%\MSTRLog*" "%LOGROOT%\%COMPUTERNAME%_LOGSWEB" /i >nul
+  xcopy "%LOGSWEB%\templogs*" "%LOGROOT%\%COMPUTERNAME%_LOGSWEB" /i >nul
 )
 
 ::Collects files from Mobile and places them in LOGSMOBILE folder
@@ -184,7 +184,7 @@ if exist "%LOGSWEB%\" (
 if exist "%LOGSMOBILE%\" (
   echo    --^>Mobile Logs Found  
   mkdir "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE"
-  xcopy "%LOGSMOBILE%\MSTRLog*" "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE" /i >nul
+  xcopy "%LOGSMOBILE%\templogs*" "%LOGROOT%\%COMPUTERNAME%_LOGSMOBILE" /i >nul
 )
 
 ::Collects Event Viewer from System and Application (Only Critical, Error, and Warning messages) and places sthem in two separate txt files
